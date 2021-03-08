@@ -1,0 +1,21 @@
+{% extends "logout_layout.html" %}
+
+    {% block body %}
+   <div class="col-xs-1" align="center">
+		<h1 class = "text-success"> Welcome, {{username}}! </h1>
+    </div>
+    <br>
+    <br>
+    <br>
+    <div class="col-4">
+    <h2> Search for Books Below </h2>
+    	<form action="" method="POST">
+        <div class="form-group">
+  				<input type="text" name="book-search" class="form-control" placeholder="Enter Book Title, Author, or ISBN" size = 40 required>
+  			</div>
+
+
+      <button class="btn btn-primary" type="submit">Search</button>
+    </form>
+    </div>
+    {% endblock %}

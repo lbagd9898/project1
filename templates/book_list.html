@@ -1,0 +1,15 @@
+{% extends "logout_layout.html" %}
+
+    {% block body %}
+		<h1> Here's your list of Books: </h1>
+    <ul>
+      {% for book in books %}
+      <li><a href="{{ url_for('reviews', isbn=book.isbn) }}">{{book.title}} by {{book.author}}</a></li>
+      {% else %}
+      <li> No Books </li>
+      {%endfor%}
+      <br>
+      <div>
+      <a href="{{ url_for('welcome') }}">Click to Go Back</a>
+      </div>
+    {% endblock %}

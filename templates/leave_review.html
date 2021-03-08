@@ -1,0 +1,22 @@
+{% extends "logout_layout.html" %}
+
+    {% block body %}
+    <h1> Leave Your Personal Review Below, {{username}} </h1>
+    <form action="" method="POST">
+			<div class="form-group">
+				<input type="text" name="review" class="form-control" placeholder="Write Your Review for {{book.title}}" size = 200 required>
+			</div>
+			<button class="btn btn-primary" type="submit">Submit</button>
+		</form>
+    <!-- <form action="" method="POST">
+     <br>
+       <textarea rows ="10" cols = "80" type="text" name="review_text" placeholder="leave review for {{book.title}} here"  required> </textarea>
+     <br>
+     <br>
+     	<input type = "submit">
+      </form> -->
+      <!-- <div class="form-group">
+    <label for="exampleFormControlTextarea1">Example textarea</label>
+    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+  </div> -->
+    {% endblock %}

@@ -1,0 +1,25 @@
+{% extends "logout_layout.html" %}
+
+    {% block body %}
+		<h1>Details for {{book.title}} by {{book.author}}</h1>
+    <ul>
+      <li> Title: {{book.title}} </li>
+      <li> Author: {{book.author}} </li>
+      <li> ISBN: {{book.isbn}} </li>
+      <li> Year Published: {{book.year}} </li>
+      <li> Number of Reviews: {{review_count}} </li>
+      <li> Average Rating: {{average_rating}} </li>
+      </ul>
+    <h2> Reviews: </h2>
+    {% if reviews is not defined %}
+      <p> No Reviews Yet. </p>
+
+      {% else %}
+      {% for review in reviews %}
+      <ul>
+        <li> {{review.username}}: {{review.review}} </li>
+        </ul>
+      {% endfor %}
+      {% endif %}
+      <a href="{{ url_for('leave_review', isbn=book.isbn) }}">Leave A Review for {{book.title}}</a>
+    {% endblock %}
